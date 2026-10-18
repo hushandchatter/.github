@@ -1,0 +1,85 @@
+name: Reportar bug
+description: Algo não está funcionando como esperado
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por reportar! Preencha os campos abaixo com o máximo de detalhes possível.
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descrição do problema
+      description: O que está acontecendo?
+      placeholder: Descreva o bug de forma clara e objetiva.
+    validations:
+      required: true
+
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+      description: Liste os passos necessários para reproduzir o problema.
+      placeholder: |
+        1. Acesse '...'
+        2. Clique em '...'
+        3. Role até '...'
+        4. Veja o erro
+    validations:
+      required: true
+
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Comportamento esperado
+      description: O que deveria acontecer?
+    validations:
+      required: true
+
+  - type: textarea
+    id: atual
+    attributes:
+      label: Comportamento atual
+      description: O que acontece de fato? Se possível, anexe prints ou vídeos.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severidade
+    attributes:
+      label: Severidade
+      options:
+        - Baixa (cosmético ou sem impacto funcional)
+        - Média (funcionalidade afetada, existe contorno)
+        - Alta (funcionalidade principal quebrada)
+        - Crítica (sistema indisponível ou perda de dados)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: ambiente
+    attributes:
+      label: Ambiente
+      options:
+        - Local
+        - Desenvolvimento
+        - Staging
+        - Produção
+    validations:
+      required: true
+
+  - type: input
+    id: versao
+    attributes:
+      label: Versão / commit
+      description: Versão da aplicação ou hash do commit onde o bug ocorre.
+      placeholder: v1.2.3 ou a1b2c3d
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs e stack trace
+      description: Cole aqui logs relevantes. Remova dados sensíveis (tokens, senhas, dados pessoais).
+      render: shell
