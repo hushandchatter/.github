@@ -1,0 +1,52 @@
+name: Solicitar funcionalidade
+description: Sugerir uma nova funcionalidade ou melhoria
+title: "[Feature]: "
+labels: ["enhancement", "triage"]
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema ou necessidade
+      description: Qual problema esta funcionalidade resolve? Quem é beneficiado?
+      placeholder: Como usuário, eu preciso de ... para ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solucao
+    attributes:
+      label: Solução proposta
+      description: Descreva o comportamento desejado.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternativas
+    attributes:
+      label: Alternativas consideradas
+      description: Outras abordagens que você avaliou e por que foram descartadas.
+
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Critérios de aceite
+      description: Condições objetivas para considerar a tarefa concluída.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prioridade
+    attributes:
+      label: Prioridade sugerida
+      options:
+        - Baixa
+        - Média
+        - Alta
+    validations:
+      required: true
+
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto adicional
+      description: Links, mockups, referências, impacto técnico ou dependências.
